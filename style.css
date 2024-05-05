@@ -1,0 +1,89 @@
+@font-face {
+      font-family: "batman-font";
+      src: url("/customouse1/batmfa__.ttf");
+}
+
+*{
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+}
+
+html, body{
+      width: 100%;
+      height: 100%;
+      font-size: 10px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root{
+      --main-color: purple;
+      --second-color: greenyellow;
+}
+
+#main{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-y: hidden;
+      overflow-x: auto;
+}
+
+#main h1{
+      font-variant: small-caps;
+      font-size: 25vw;
+      letter-spacing: 2px;
+      font-weight: 900;
+      color: #fff;
+      text-shadow: 5px 2px 0px red;
+      font-family: "batman-font";
+}
+
+#cursor{
+      box-shadow: 0px 0px 300px 80px var(--second-color);
+      mix-blend-mode:difference;
+      width: 110px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background-color: var(--main-color);
+      position: absolute;
+      transition: all .3s linear;
+      animation-name: changecolor;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+}
+
+@keyframes changecolor{
+      0%{
+            --main-color: green;
+            --second-color: red;
+      }
+      20%{
+            --main-color: red;
+            --second-color: blue;
+      }
+      0%{
+            --main-color: blue;
+            --second-color: #ff00ee;
+      }
+      40%{
+            --main-color: #ff00ee;
+            --second-color: yellow;
+      }
+      6%{
+            --main-color: yellow;
+            --second-color: brown;
+      }
+      80%{
+            --main-color: brown;
+            --second-color: cyan;
+      }
+      100%{
+            --main-color: cyan;
+            --second-color: green;
+      }
+}
