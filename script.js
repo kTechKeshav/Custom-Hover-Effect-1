@@ -7,6 +7,7 @@ let p = prompt("Enter your First Name : ");
 
 const mainpage = document.querySelector("#main");
 const crsr = document.querySelector("#cursor");
+const image = document.getElementById("Effect");
 
 mainpage.addEventListener("mousemove", (dets)=>{
       crsr.style.left = dets.x + "px"
@@ -22,4 +23,14 @@ document.addEventListener("touchmove", (event) => {
       crsr.style.width = "160px";
       crsr.style.transition = "all .1s linear";
   });
+
+function change() {
+  setInterval(() => {
+    var randomNumber = Math.floor(Math.random() * 1000);
+    image.style.background = `url("https://picsum.photos/200/300?random=${randomNumber}")`;
+    image.style.backgroundClip = "text";
+  }, 5000);
+}
+
+change();
 
